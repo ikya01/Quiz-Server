@@ -4,29 +4,19 @@ import jakarta.persistence.*;
 import jakarta.validation.constraints.NotBlank;
 import lombok.Getter;
 import lombok.Setter;
+
+
 @Getter
 @Setter
 @Entity
-public class User {
+public class Certificate {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
     @NotBlank
-    private String username;
+    private String username; // Utiliser directement le nom d'utilisateur
     @NotBlank
-    private String nom;
-    @NotBlank
-    private String prenom;
-    @NotBlank
-    private String password;
+    private String pdfPath;
 
-    public String getUsername() {
-        return username;
-    }
-
-    public String getPassword() {
-        return password;
-    }
-
-
+    // Getters, setters, constructeurs...
 }
