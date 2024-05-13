@@ -4,29 +4,29 @@ import jakarta.persistence.*;
 import jakarta.validation.constraints.NotBlank;
 import lombok.Getter;
 import lombok.Setter;
+
+import java.util.List;
+
 @Getter
 @Setter
 @Entity
-public class User {
+public class Course {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
-    @NotBlank
-    private String username;
-    @NotBlank
-    private String nom;
-    @NotBlank
-    private String prenom;
-    @NotBlank
-    private String password;
 
-    public String getUsername() {
-        return username;
-    }
+    @NotBlank
+    private String title;
 
-    public String getPassword() {
-        return password;
-    }
+    @NotBlank
+    private String description;
 
+    @NotBlank
+    private String youtubeVideoUrl;
+
+    @ElementCollection
+    private List<String> topics;
+
+    // Autres propriétés et méthodes nécessaires
 
 }
